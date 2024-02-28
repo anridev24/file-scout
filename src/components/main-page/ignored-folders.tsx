@@ -106,7 +106,6 @@ export function IgnoredFolders() {
       </div>
       <div className="flex h-6 w-full flex-row items-center justify-between gap-2 bg-[#5A5555]">
         {getActionButton()}
-        <div className="h-full bg-[#7d7676] p-1"></div>
         {getSecondaryActionButton()}
       </div>
     </div>
