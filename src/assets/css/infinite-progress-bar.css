@@ -1,0 +1,35 @@
+@keyframes slideRightFirst {
+  0% {
+    left: -100%;
+    width: 20%; /* Adjust the width of the moving bar here */
+  }
+  50% {
+    width: 30%; /* Optionally, make the bar wider in the middle of the animation */
+  }
+  100% {
+    left: 100%;
+    width: 20%; /* Adjust the width of the moving bar here */
+  }
+}
+
+@keyframes slideRightSecond {
+  0% {
+    left: -150%; /* Start further left to stagger the animations */
+    width: 20%;
+  }
+  50% {
+    width: 30%;
+  }
+  100% {
+    left: 100%;
+    width: 20%;
+  }
+}
+
+.loading-bar.first-bar {
+  animation: slideRightFirst 1s infinite ease-in-out; /* Adjust timing and easing here */
+}
+
+.loading-bar.second-bar {
+  animation: slideRightSecond 1s infinite ease-in-out; /* Adjust timing and easing here */
+}
