@@ -4,6 +4,7 @@ import { AppEvent } from '@custom-types/app-event.enum';
 import { useState } from 'react';
 import { Logo } from '@components/shared';
 import { invoke } from '@tauri-apps/api';
+import { appWindow } from '@tauri-apps/api/window';
 
 export default function ResultPage() {
   const [searchResult, setSearchResult] = useState<string[]>([]);
@@ -23,6 +24,10 @@ export default function ResultPage() {
     return text.length > optimalLength
       ? `${text.substring(0, optimalLength)}...`
       : text;
+  }
+
+  async function handleClose() {
+    await appWindow.close();
   }
 
   return (
@@ -53,7 +58,7 @@ export default function ResultPage() {
           </div>
         )}
         <div>
-          <button className="m-2 h-10 w-full bg-[#C14E4E] px-2 text-white filter transition-all duration-300 ease-in-out hover:brightness-75">
+          <button onClick={handleClose} className="m-2 h-10 w-full bg-[#C14E4E] px-2 text-white filter transition-all duration-300 ease-in-out hover:brightness-75">
             Close Window
           </button>
         </div>
