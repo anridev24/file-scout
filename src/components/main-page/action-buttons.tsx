@@ -60,9 +60,9 @@ export function ActionButtons() {
   return (
     <div className="mt-10 flex w-[75%] flex-row items-center justify-between gap-x-8">
       <button
-      disabled={processing}
+        disabled={processing}
         onClick={handleClear}
-        className="h-10 w-full bg-[#C14E4E] disabled:cursor-not-allowed disabled:brightness-75 text-white filter transition-all duration-300 ease-in-out hover:brightness-75"
+        className="h-10 w-full bg-[#C14E4E] text-white filter transition-all duration-300 ease-in-out hover:brightness-75 disabled:cursor-not-allowed disabled:brightness-75"
       >
         Clear
       </button>

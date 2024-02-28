@@ -58,7 +58,10 @@ export default function ResultPage() {
           </div>
         )}
         <div>
-          <button onClick={handleClose} className="m-2 h-10 w-full bg-[#C14E4E] px-2 text-white filter transition-all duration-300 ease-in-out hover:brightness-75">
+          <button
+            onClick={handleClose}
+            className="m-2 h-10 w-full bg-[#C14E4E] px-2 text-white filter transition-all duration-300 ease-in-out hover:brightness-75"
+          >
             Close Window
           </button>
         </div>
