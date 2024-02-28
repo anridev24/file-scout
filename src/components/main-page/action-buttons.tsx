@@ -17,7 +17,7 @@ export function ActionButtons() {
     setSearchInfo,
   } = useAppStore();
 
-  async function startSearch() {
+  async function handleStart() {
     if (!keyword || !workingPath) {
       alert('Please enter a keyword and select a folder to start search');
       return;
@@ -51,7 +51,7 @@ export function ActionButtons() {
     setSearchInfo({ total: 0, current: 0 });
   }
 
-  function stopSearch() {
+  function handleClear() {
     setProcessing(false);
     setKeyword(null);
     setWorkingPath(null);
@@ -60,14 +60,15 @@ export function ActionButtons() {
   return (
     <div className="mt-10 flex w-[75%] flex-row items-center justify-between gap-x-8">
       <button
-        onClick={stopSearch}
-        className="h-10 w-full bg-[#C14E4E] text-white filter transition-all duration-300 ease-in-out hover:brightness-75"
+      disabled={processing}
+        onClick={handleClear}
+        className="h-10 w-full bg-[#C14E4E] disabled:cursor-not-allowed disabled:brightness-75 text-white filter transition-all duration-300 ease-in-out hover:brightness-75"
       >
-        Stop
+        Clear
       </button>
       <button
         disabled={processing}
-        onClick={startSearch}
+        onClick={handleStart}
         className="h-10 w-full bg-[#68C18A] text-white filter transition-all duration-300 ease-in-out hover:brightness-75 disabled:cursor-not-allowed disabled:brightness-75"
       >
         Start
